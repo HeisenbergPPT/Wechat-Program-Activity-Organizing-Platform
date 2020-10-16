@@ -1,15 +1,17 @@
 ### 项目简述
 
-本项目为《9小时搞定微信小程序开发》课程的实战项目「小书架」示例源码，包含了 `书籍列表`、`个人中心`、`用户登录`、 `书籍详情`、`模板消息推送`、`书籍详情`、`用户评论`、`已购书籍`等模块。
+Douya activity organizing platform Wechat App.
+Aiming at Chinese located in Japan. The App contain offline activity, online activity, my, my activity registered, comment and detail of activities.
+Contain both frontend(client) and backend(server)
+use mysql database
+notice that Wechat App only support Https protocal, already written in server
 
 ### 如何部署
 
 本项目需要依赖服务端及数据库等应用，所以需要大家进行服务端及数据库部署，这里以本地服务及数据库搭建为例，具体步骤如下：
 
-* 安装并启动 mysql， 参考文章[Windows 环境下 MySQL 5.7 安装配置指南](https://www.jianshu.com/p/710e5861c198)和[Mac下安装与配置MySQL](https://www.jianshu.com/p/a8e4068a7a8a)
-* 新建数据库，可参考我的这篇文章[手把手教会你小程序登录鉴权](https://juejin.im/post/5ac9b72cf265da23906c486a)来让数据库表支持emoji存储
-* 导入 `db` 目录下的所有数据表
-* 更改数据库里`activitys`数据表里的`bkfile`字段，添加书籍文件地址（由于版权等敏感信息，不便使用课程demo里的文件地址，可自行添加）
+* 安装并启动 mysql
+* 新建数据库，
 * 更改 `client` 下 `config/config.js` 文件中的 `baseUrl`，将 `[your port]` 改为后台服务对应的端口，默认为`3003`
 * 更改 `server` 下 `conf/app.js` 文件中的 `appid` 和 `secret` ，填入自己小程序对应的 appid 和 小程序密钥
 * 更改 `server` 下 `conf/db.js` 文件中的相关配置，如下：
