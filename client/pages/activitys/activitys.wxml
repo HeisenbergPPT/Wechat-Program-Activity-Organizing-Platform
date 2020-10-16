@@ -1,0 +1,195 @@
+
+<!--swiper.wxml-->
+<view class="section">
+    <view class="page-body">
+        <swiper 
+            style="width:{{imagewidth}}px; height:{{imageheight}}px;"
+            bindload="imageLoad" 
+            indicator-dots="{{indicatorDots}}" 
+            autoplay="{{autoplay}}" 
+            interval="{{interval}}"
+            duration="{{duration}}"
+        >   
+            <block wx:for="{{background}}" wx:key="*this">
+                <swiper-item class="backgroundswiper">
+                    <image class="swiper-item"             
+                    style="width:{{imagewidth}}px; height:{{imageheight}}px;"
+                    bindload="imageLoad" 
+                    src="{{item.url}}"  mode="aspectFill" data-arrindex='{{index}}' ></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>
+
+<view style="display: flex">
+<view style=" margin-left:18px">热门城市:</view>
+<image style="width:30px;height:30px;"
+        src="../../images/speaker.gif">
+</image>
+<view class='showallcity' bindtap='cityall' hover-class="hover">全部城市</view>
+<image style="width:25px;height:25px;"
+        src="../../images/clickallcity.gif">
+</image>
+</view>
+
+
+<view class='cateCommodity'>
+    <view class='city-container' hover-class="hover">
+        <block wx:for="{{Tokyo}}" wx:key="item">
+            <image src="{{item.url}}" style='width:{{cityWidth}}px;height:{{cityHeight}}px;' mode="scaleToFill" bindtap='city1' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="city">东京</cover-view>        
+          </image>
+        </block>
+    </view>
+    <view class='city-container2' hover-class="hover">
+        <block wx:for="{{Osaka}}" wx:key="item">
+            <image src="{{item.url}}" style='width:{{cityWidth}}px;height:{{cityHeight}}px;' mode="scaleToFill" bindtap='city2' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="city">大阪</cover-view>        
+          </image>
+        </block>
+    </view>
+    <view class='city-container2' hover-class="hover">
+        <block wx:for="{{Kyoto}}" wx:key="item">
+            <image src="{{item.url}}" style='width:{{cityWidth}}px; height:{{cityHeight}}px;' mode="scaleToFill" bindtap='city3' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="city">京都</cover-view>        
+          </image>
+        </block>
+    </view>
+</view>
+
+<view style="display: flex">
+<view style="margin-left:18px; margin-bottom:10px">活动分类:</view>
+<image style="width:25px;height:25px;"
+        src="../../images/hot.gif">
+</image>
+</view>
+
+<view class='cateCommodity'>
+    <view class='type-container' hover-class="hover">
+        <image src="../../images/card1.png" style='width:{{typeWidth}}px;height:{{typeHeight}}px;'mode="scaleToFit" bindtap='type1' class="back-img">
+            <cover-view class="activity">棋牌</cover-view>        
+        </image>
+    </view>
+
+    <view class='type-container2' hover-class="hover">
+        <block wx:for="{{Osaka}}" wx:key="item">
+            <image src="../../images/food.png" style='width:{{typeWidth}}px;height:{{typeHeight}}px;' mode="scaleToFill" bindtap='type2' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="activity">聚餐</cover-view>        
+          </image>
+        </block>
+    </view>
+
+    <view class='type-container2' hover-class="hover">
+        <block wx:for="{{Osaka}}" wx:key="item">
+            <image src="../../images/sports.png" style='width:{{typeWidth}}px;height:{{typeHeight}}px;' mode="scaleToFill" bindtap='type3' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="activity">运动</cover-view>        
+          </image>
+        </block>
+    </view>
+    <view class='type-container2' hover-class="hover">
+        <block wx:for="{{Kyoto}}" wx:key="item">
+            <image src="../../images/deskgame.png" style='width:{{typeWidth}}px; height:{{typeHeight}}px;' mode="scaleToFill" bindtap='type4' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="activity">桌游</cover-view>        
+          </image>
+        </block>
+    </view>
+</view>
+<view class='cateCommodity'>
+    <view class='type-container' hover-class="hover">
+        <image src="../../images/outdoor.png" style='width:{{typeWidth}}px;height:{{typeHeight}}px;'mode="scaleToFit" bindtap='type5' class="back-img">
+            <cover-view class="activity">出行</cover-view>        
+        </image>
+    </view>
+
+    <view class='type-container2' hover-class="hover">
+        <block wx:for="{{Kyoto}}" wx:key="item">
+            <image src="../../images/dance.png" style='width:{{typeWidth}}px; height:{{typeHeight}}px;' mode="scaleToFill" bindtap='type6' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="activity">舞蹈</cover-view>        
+          </image>
+        </block>
+    </view>
+    <view class='type-container2' hover-class="hover">
+        <block wx:for="{{Kyoto}}" wx:key="item">
+            <image src="../../images/other.png" style='width:{{typeWidth}}px; height:{{typeHeight}}px;' mode="scaleToFill" bindtap='type7' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="activity">其他</cover-view>        
+          </image>
+        </block>
+    </view>
+    <view class='type-container2' hover-class="hover">
+        <block wx:for="{{Kyoto}}" wx:key="item">
+            <image src="../../images/all.png" style='width:{{typeWidth}}px; height:{{typeHeight}}px;' mode="scaleToFill" bindtap='type8' data-arrindex='{{index}}' class="back-img">
+            <cover-view class="activity">全部</cover-view>        
+          </image>
+        </block>
+    </view>
+</view>
+
+<view style="display: flex">
+<view style="margin-left:18px; margin-bottom:10px">当前热门:</view>
+<image style="width:25px;height:25px;"
+        src="../../images/hot.gif">
+</image>
+</view>
+
+<block wx:if="{{showLoading}}">
+		<view class="donut-container">
+				<view class="donut"></view>
+		</view>
+</block>
+
+<block wx:else>
+<view class='cateCommodity'>
+  <view class="item-container">
+    <block wx:for="{{activityList}}" wx:key="index" 
+    wx:if="{{((item.activity_id/100000000-a_id<1 && item.activity_id/100000000-a_id>0)||a_id==0)&&(item.category==city_id||city_id==0) &&item.activity_id%2}}"
+    >
+        <view 
+        style='width:{{screenWidth}}px; height:{{item.width}}px'
+        hover-class="hover" 
+        catchtap="goDetail" 
+        data-author="{{item.author}}" 
+        data-category="{{item.category}}" 
+        data-image="{{item.cover_url}}" 
+        data-id="{{item.activity_id}}" 
+        data-name="{{item.activity_name}}" 
+        data-price="{{item.activity_price}}" 
+        data-publisher="{{item.activity_publisher}}" 
+        data-file="{{item.file_url}}"
+        >
+        <image src="{{item.cover_url}}" style='width:{{screenWidth}}px;height:{{item.width}}px;' mode="scaleToFill" data-arrindex='{{index}}' class="back-img"></image>
+ 			  </view>
+        <view class="activity-info">
+	 			<text class="activity-name">{{item.activity_name}}</text>
+	 			<text class="author">{{item.author}}</text>
+				</view>
+    </block>
+  </view>
+
+  <view class="item-container2">
+    <block wx:for="{{activityList}}" wx:key="index" 
+    wx:if="{{((item.activity_id/100000000-a_id<1&& item.activity_id/100000000-a_id>0)||a_id==0)&&(item.category==city_id||city_id==0) &&1-item.activity_id%2}}">
+        <view 
+        style='width:{{screenWidth}}px; height:{{item.width}}px'
+        hover-class="hover" 
+        catchtap="goDetail" 
+        data-author="{{item.author}}" 
+        data-category="{{item.category}}" 
+        data-image="{{item.cover_url}}" 
+        data-id="{{item.activity_id}}" 
+        data-name="{{item.activity_name}}" 
+        data-price="{{item.activity_price}}" 
+        data-publisher="{{item.activity_publisher}}" 
+        data-file="{{item.file_url}}"
+        >
+        <image src="{{item.cover_url}}" style='width:{{screenWidth}}px;height:{{item.width}}px;' mode="scaleToFill" data-arrindex='{{index}}' class="back-img">></image>
+ 			  </view>
+        <view class="activity-info">
+	 			<text class="activity-name">{{item.activity_name}}</text>
+	 			<text class="author">{{item.author}}</text>
+				</view>
+    </block>
+	</view>
+
+</view>
+</block>
