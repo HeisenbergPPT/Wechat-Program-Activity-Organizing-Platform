@@ -1,0 +1,85 @@
+<!--pages/detail/detail.wxml-->
+<view>
+	<view>
+	<image style="width:{{imagewidth}}px; height:{{imageheight}}px;"  src="{{activityInfo.image}}" bindload="imageLoad" class="activity-image"> </image>
+	</view>
+	<view class="activity-container bg-white">
+		<view class="activity-info">
+			<view class="activity-desc">
+				<text class="activity-main-text">{{activityInfo.name}}</text>
+				<text class="activity-text">{{activityInfo.author}}</text>
+				<text class="activity-text">{{activityInfo.publisher}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="button-area" wx:if="{{participants.length > 0}}" >
+				<button type="primary" catchtap="confirmBuyActivity" wx:if="{{activityIsBuy == 0 && participants.length<participants[0].nlimit}}">报名</button>
+				<button type="default" wx:if="{{activityIsBuy == 1}}">报名成功</button>
+				<button type="default" catchtap="readActivity" wx:if="{{activityIsBuy == 1}}">资料</button>
+				<button type="default" catchtap="confirmCancelActivity" wx:if="{{activityIsBuy == 1}}">取消报名</button>
+				<button type="primary" disabled="ture" wx:if="{{activityIsBuy == 0 && participants.length>=participants[0].nlimit}}">已满员</button>
+	</view>
+	<view class="button-area" wx:else >
+				<button type="primary" catchtap="confirmBuyActivity" wx:if="{{activityIsBuy == 0}}">报名</button>
+	</view>
+
+<view wx:if="{{participants.length > 0}}" 
+			style="padding-top: 20px; padding-left: 30px;">已报名成员: {{participants.length}}/{{participants[0].nlimit}}</view>
+<view class="participant">
+		<block wx:if="{{participants.length > 0}}">
+			<block wx:for="{{participants}}"  wx:key="index">
+			<view style="margin-right:5px;"
+        data-image="{{item.uavatar}}" 
+        data-name="{{item.uname}}" 
+				>
+					<image src="{{item.uavatar}}" class="avatar"></image>
+			</view>
+			</block>
+		</block>
+
+		<block wx:else>
+			<view>快来第一个报名吧！</view>
+		</block>
+</view>
+
+	<view class="comment-container">
+		<view class="comment-title">
+			<text>--------- 评论 ---------</text>
+		</view>
+
+		<view class="comment-area">
+			
+			<block wx:if="{{commentList.length > 0}}">
+				<view class="comment-item" wx:for="{{commentList}}" wx:key="index">
+					<view class="avatar-container">
+						<image mode="scaleToFill" src="{{item.uavatar}}" class="user-avatar"></image>
+					</view>
+
+					<view class="comment-content">
+						<text class="user-name">{{item.uname}}</text>
+						<text class="user-comment">{{item.ccontent}}</text>
+						<text class="comment-time">{{item.ctime}}</text>
+					</view>
+				</view>
+			</block>
+
+			<block wx:else>
+				<view class="comment-placeholder">来当第一个评论的人吧～</view>
+			</block>
+		
+		</view>
+	</view>
+
+	<!-- bottom button -->
+    <view class="fixed-bottom block-full-width flex-container bg-white">
+		<button 
+			class="full-button" 
+			type="primary" 
+			catchtap="goComment" 
+			data-id="{{activityInfo.id}}" 
+			data-name="{{activityInfo.name}}"
+		> 写评论 </button>
+		</view>
+		
+</view>
