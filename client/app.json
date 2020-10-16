@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/activitys/activitys",
+    "pages/online/online",
+    "pages/my/my",
+    "pages/myActivitys/myActivitys",
+    "pages/detail/detail",
+    "pages/comment/comment",
+    "pages/publish/publish"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f2f2f2",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/activitys/activitys",
+        "text": "线下活动",
+        "iconPath": "images/notoffline.png",
+        "selectedIconPath": "images/activity.png"
+      },
+      {
+        "pagePath": "pages/online/online",
+        "text": "线上活动",
+        "iconPath": "images/notonline.png",
+        "selectedIconPath": "images/online1.jpg"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "images/notmy.png",
+        "selectedIconPath": "images/my.png"
+      }
+    ],
+    "color": "#bfbfbf",
+    "selectedColor": "#1AAD19"
+  },
+  "networkTimeout": {
+    "request": 3000
+  },
+  "sitemapLocation": "sitemap.json"
+}
