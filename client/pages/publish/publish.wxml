@@ -1,0 +1,11 @@
+
+<image class="swiper-item"             
+                    style="width:{{imagewidth}}px; height:{{imageheight}}px;"
+                    bindload="imageLoad" 
+                    src="../../images/funny.jpg"  mode="aspectFill" data-arrindex='{{index}}' ></image>
+<text>
+  注：豆芽积分每月初更新至30
+  请将活动详情和封面或问题发送至邮箱：
+  pangtong2015@126.com 
+  或添加微信：Lovewisdom927
+</text>
