@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="user-container bg-white">
+    
+    <view class="userinfo">
+        
+        <block wx:if="{{!hasLogin}}">
+            <button type="primary" open-type="getUserInfo">
+                先点我授权再登录
+            </button>
+            <image class="userinfo-avatar" src="../../images/pointicon.png" background-size="cover" catchtap="doLogin"></image>
+            <text class="userinfo-nickname">点击登录</text>
+        </block>
+        
+        <block wx:else>
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+
+    </view>
+
+</view>
+
+<view class="tab-container bg-white">
+
+    <view class="tab-item border-bottom">
+        <view>
+            <image src="../../images/pointicon.png" mode="aspectFit" class="tab-icon"></image>
+            <text class="tab-text">豆芽积分</text>
+        </view>
+        
+        <text class="tab-text" wx:if="{{hasLogin}}">{{userInfo.balance}}</text>
+        <text class="tab-text" wx:else></text>
+    </view>
+
+    <view class="tab-item border-bottom" hover-class="tab-item-hover" catchtap="goMyActivitys">
+        <view>
+            <image src="../../images/previous.png" mode="aspectFit" class="tab-icon"></image>
+            <text class="tab-text">我的活动</text>
+        </view>
+        
+        <view class="tab-arrow"></view>
+    </view>
+
+    <view class="tab-item" hover-class="tab-item-hover" catchtap="goPublish">
+        <view>
+            <image src="../../images/publish.jpg" mode="aspectFit" class="tab-icon"></image>
+            <text class="tab-text">发布活动以及帮助：</text>
+        </view>
+        
+        <view class="tab-arrow"></view>
+    </view>
+
+</view>
