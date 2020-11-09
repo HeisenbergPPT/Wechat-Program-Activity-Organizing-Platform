@@ -1,0 +1,65 @@
+<!--swiper.wxml-->
+<view>
+	<image style="width:{{imagewidth}}px; height:{{imageheight}}px;"  src="https://img2.doubanio.com/view/photo/l/public/p2622620303.jpg" bindload="imageLoad" class="activity-image"> </image>
+</view>
+<block wx:if="{{showLoading}}">
+		<view class="donut-container">
+				<view class="donut"></view>
+		</view>
+</block>
+
+<block wx:else>
+<view class='cateCommodity'>
+  <view class="item-container">
+    <block wx:for="{{activityList}}" wx:key="index" 
+    wx:if="{{item.category==101 && item.activity_id%2}}"
+    >
+        <view 
+        style='width:{{screenWidth}}px; height:{{item.width}}px'
+        hover-class="hover" 
+        catchtap="goDetail" 
+        data-author="{{item.author}}" 
+        data-category="{{item.category}}" 
+        data-image="{{item.cover_url}}" 
+        data-id="{{item.activity_id}}" 
+        data-name="{{item.activity_name}}" 
+        data-price="{{item.activity_price}}" 
+        data-publisher="{{item.activity_publisher}}" 
+        data-file="{{item.file_url}}"
+        >
+        <image src="{{item.cover_url}}" style='width:{{screenWidth}}px;height:{{item.width}}px;' mode="scaleToFill" bindtap='showVideoInfo' data-arrindex='{{index}}' class="back-img"></image>
+ 			  </view>
+        <view class="activity-info">
+	 			<text class="activity-name">{{item.activity_name}}</text>
+	 			<text class="author">{{item.author}}</text>
+				</view>
+    </block>
+  </view>
+
+  <view class="item-container2">
+    <block wx:for="{{activityList}}" wx:key="index" 
+    wx:if="{{item.category==101 && 1-item.activity_id%2}}">
+        <view 
+        style='width:{{screenWidth}}px; height:{{item.width}}px'
+        hover-class="hover" 
+        catchtap="goDetail" 
+        data-author="{{item.author}}" 
+        data-category="{{item.category}}" 
+        data-image="{{item.cover_url}}" 
+        data-id="{{item.activity_id}}" 
+        data-name="{{item.activity_name}}" 
+        data-price="{{item.activity_price}}" 
+        data-publisher="{{item.activity_publisher}}" 
+        data-file="{{item.file_url}}"
+        >
+        <image src="{{item.cover_url}}" style='width:{{screenWidth}}px;height:{{item.width}}px;' mode="scaleToFill" bindtap='showVideoInfo' data-arrindex='{{index}}' class="back-img">></image>
+ 			  </view>
+        <view class="activity-info">
+	 			<text class="activity-name">{{item.activity_name}}</text>
+	 			<text class="author">{{item.author}}</text>
+				</view>
+    </block>
+	</view>
+
+</view>
+</block>
