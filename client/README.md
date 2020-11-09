@@ -58,7 +58,7 @@
 
 | page | description |
 | --- | --- |
-| activitys | fist page/offline activities |
+| activitys | first page/offline activities |
 | online | online activities|
 | comment | comment page |
 | detail | detail of activity |
